@@ -1,8 +1,11 @@
-#Picture Idea - Landscape: grass, clouds, sun.
+#Picture Idea - Landscape: grass, tree, clouds, moving sun.
 import turtle as trtl
 
 painter = trtl.Turtle()
 painter.speed(0)
+
+wn = trtl.Screen()
+wn.bgcolor('gray')
 
 def clouds():
     painter.setheading(90)
@@ -115,10 +118,23 @@ painter.speed(3)
 painter.color("yellow")
 painter.shape("circle")
 painter.setheading(180)
-painter.forward(400)
+painter.forward(380)
 
-wn = trtl.Screen()
+#Placing a sun
+painter.speed(0)
+painter.pendown()
+painter.begin_fill()
+painter.fillcolor("yellow")
+painter.circle(25)
+painter.end_fill()
+painter.penup()
+
+#Bird
+painter.goto(250,100)
+painter.shape("triangle")
+painter.color("black")
+painter.speed(3)
+painter.forward(500)
+painter.hideturtle()
+
 wn.mainloop()
-
-
-
